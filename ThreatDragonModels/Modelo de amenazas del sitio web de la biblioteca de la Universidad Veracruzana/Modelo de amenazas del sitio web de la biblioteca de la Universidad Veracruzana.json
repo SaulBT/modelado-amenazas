@@ -1772,8 +1772,8 @@
                 "text": "Proceso\nde login"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1866,16 +1866,37 @@
             "data": {
               "type": "tm.Process",
               "name": "Proceso\nde login",
-              "description": "",
+              "description": "Procedimiento que recibe las peticiones del usuario para iniciar la sesión. ",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "50423efd-c8a6-4ae3-9554-7ab26213b172",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 23,
+                  "score": ""
+                }
+              ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -1989,7 +2010,7 @@
             "data": {
               "type": "tm.Store",
               "name": "Páginas web\nen disco",
-              "description": "",
+              "description": "Páginas físicas almacenadas en el disco. ",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
@@ -1999,7 +2020,27 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "4490fb0f-6528-4db9-b443-233ecea918dd",
+                  "title": "Modificación sin autorización ",
+                  "status": "Mitigated",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "Un atacante podría modificar las páginas web sin autorización. ",
+                  "mitigation": "Las páginas solo tienen acceso de lectura. Únicamente el usuario administrador puede tener acceso de escritura. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -2638,23 +2679,13 @@
                 "x": 1250,
                 "y": 240
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 21
+    "threatTop": 23
   }
 }
