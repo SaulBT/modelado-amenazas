@@ -1,0 +1,16 @@
+{
+  "version": "2.5.0",
+  "summary": {
+    "title": "Modelo de amenazas del sitio web de la biblioteca de la Universidad Veracruzana",
+    "owner": "Saúl Barragán Torres",
+    "description": "El sitio web de la biblioteca universitaria es la primera implementación de un \nsitio web para brindar servicios en línea a los bibliotecarios y usuarios de la biblioteca \n(estudiantes y personal universitario). Como esta es la primera implementación del sitio \nweb, la funcionalidad será limitada. Serán tres usuarios de la aplicación:\n1. Estudiantes \n2. Personal \n3. Bibliotecarios ",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "Guillermo Vera",
+    "threatTop": 0
+  }
+}
