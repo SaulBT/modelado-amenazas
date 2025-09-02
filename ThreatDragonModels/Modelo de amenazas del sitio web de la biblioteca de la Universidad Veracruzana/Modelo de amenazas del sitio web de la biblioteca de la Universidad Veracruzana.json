@@ -2332,52 +2332,6 @@
             ]
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Vistas",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Vistas"
-            ],
-            "id": "49042e9f-d0b7-4fb1-93db-19f67c11a436",
-            "source": {
-              "cell": "f590627e-c9f4-474a-a00c-f9f60b8580e4",
-              "port": "d5b9db16-5545-41a3-81ff-ae0c21daaf8d"
-            },
-            "target": {
-              "cell": "92633801-a854-4d6c-a99a-53dabf7783e8",
-              "port": "7e6fed2e-2434-4e32-bc90-a4230324b8bd"
-            },
-            "vertices": []
-          },
-          {
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
@@ -2545,18 +2499,23 @@
               "threats": [
                 {
                   "id": "ff242228-7656-4abf-b9b0-ca8f3144774f",
-                  "title": "New STRIDE threat",
+                  "title": "El flujo de datos debe utilizar HTTP/S ",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Estas solicitudes se transmiten a través de la Internet pública y podrían ser interceptadas por un atacante. ",
+                  "mitigation": "Las solicitudes deberían requerir HTTPS/S. Esto proporcionara confidencialidad e integridad. HTTP no debe ser compatible",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 18,
-                  "score": ""
+                  "score": "15"
                 }
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Web Request"
@@ -2575,7 +2534,53 @@
                 "x": 400,
                 "y": 300
               }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Vistas",
+              "description": "Páginas web leídas desde el disco duro. ",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Vistas"
             ],
+            "id": "49042e9f-d0b7-4fb1-93db-19f67c11a436",
+            "source": {
+              "cell": "f590627e-c9f4-474a-a00c-f9f60b8580e4",
+              "port": "d5b9db16-5545-41a3-81ff-ae0c21daaf8d"
+            },
+            "target": {
+              "cell": "92633801-a854-4d6c-a99a-53dabf7783e8",
+              "port": "7e6fed2e-2434-4e32-bc90-a4230324b8bd"
+            },
+            "vertices": [],
             "tools": {
               "items": [
                 "boundary",
