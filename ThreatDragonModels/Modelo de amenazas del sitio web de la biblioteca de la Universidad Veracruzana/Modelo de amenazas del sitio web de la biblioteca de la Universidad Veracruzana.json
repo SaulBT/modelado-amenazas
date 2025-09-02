@@ -7,7 +7,14 @@
     "id": 0
   },
   "detail": {
-    "contributors": [],
+    "contributors": [
+      {
+        "name": "Lorena Rojas"
+      },
+      {
+        "name": "Roberto Ochoa"
+      }
+    ],
     "diagrams": [
       {
         "id": 0,
