@@ -1878,25 +1878,26 @@
               "threats": [
                 {
                   "id": "50423efd-c8a6-4ae3-9554-7ab26213b172",
-                  "title": "New STRIDE threat",
+                  "title": "Ataque de fuerza bruta",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "Un atacante podría realizar un ataque con un diccionario para tratar de adivinar la contraseña de los usuarios. ",
+                  "mitigation": "Se deben bloquear la cuenta después de N intentos fallidos. Se deben validar la complejidad y longitud de las contraseñas. ",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 23,
-                  "score": ""
+                  "score": "9"
                 }
-              ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
               ],
-              "name": null
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 1
+              }
             }
           },
           {
@@ -2057,11 +2058,13 @@
                 "text": "Base de datos"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2154,17 +2157,31 @@
             "data": {
               "type": "tm.Store",
               "name": "Base de datos",
-              "description": "",
+              "description": "El servidor de la base de datos será MySQL y se ejecutará en un servidor Linux. Este servidor será reforzado según el estándar de protección de servidores de la universidad. Esto incluirá la instalación de los últimos parches de seguridad del sistema operativo y de las aplicaciones. ",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "fa13837d-236a-4c02-b7bc-85e7d4d991cf",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 24,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -2686,6 +2703,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 23
+    "threatTop": 25
   }
 }
