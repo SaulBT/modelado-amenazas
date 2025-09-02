@@ -2085,6 +2085,48 @@
               "storesInventory": false,
               "threats": []
             }
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Usuario/Web server\nlímite",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Usuario/Web server\nlímite"
+            ],
+            "id": "1b2a9297-1ad5-4821-ba32-0b9cfa38b5bb",
+            "source": {
+              "x": 330,
+              "y": 110
+            },
+            "target": {
+              "x": 330,
+              "y": 310
+            },
+            "vertices": [
+              {
+                "x": 440,
+                "y": 220
+              }
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           }
         ]
       }
