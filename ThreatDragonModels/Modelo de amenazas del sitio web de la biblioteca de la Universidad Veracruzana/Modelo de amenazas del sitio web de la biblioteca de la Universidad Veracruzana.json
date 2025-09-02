@@ -1601,25 +1601,26 @@
               "threats": [
                 {
                   "id": "4a5d2347-7423-4423-98b5-a985c5fdb56b",
-                  "title": "New STRIDE threat",
+                  "title": "Denegación de servicio",
                   "status": "Open",
-                  "severity": "TBD",
-                  "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Un atacante podría denegar el acceso a usuarios válidos, haciendo que el servidor web no esté disponible o sea inutilizable temporalmente por medio del envío de múltiples peticiones simultaneas. ",
+                  "mitigation": "Se utiliza un balanceo de cargas en el servidor web. Se monitorean las direcciones IP de los clientes y al encontrar un posible ataque, se bloquea el acceso. Se considera contratar un servicio de VPN para ocultar la dirección IP pública a los clientes. ",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 16,
-                  "score": ""
+                  "score": "9"
                 }
-              ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
               ],
-              "name": null
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2161,7 +2162,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -2178,16 +2180,35 @@
             "data": {
               "type": "tm.Flow",
               "name": "Web Response",
-              "description": "",
+              "description": "Respuestas enviadas por la aplicación hacia los usuarios. ",
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "783bd929-d3fe-4088-910d-73f31448872a",
+                  "title": "El flujo de  datos debe  utilizar  HTTP/S ",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Estas respuestas se transmiten a traves de la Internet pública y podrían ser interceptadas por un atacante. ",
+                  "mitigation": "Las respuestas deberian requerir HTTPS/S. Esto proporcionara confidencialidad e integridad. HTTP no debe ser compatible. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 17,
+                  "score": "15"
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Web Response"
@@ -2546,6 +2567,6 @@
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 16
+    "threatTop": 17
   }
 }
