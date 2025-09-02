@@ -2230,57 +2230,6 @@
             ]
           },
           {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "UsuarioAutenticado\nResultado",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "UsuarioAutenticado\nResultado"
-            ],
-            "id": "e6a8b2f3-6d54-4025-b1e8-e21ca624db5b",
-            "source": {
-              "cell": "2f2a7fb6-b6d1-4802-9164-88c23a25a7ed",
-              "port": "b9b4c288-5954-41d0-945e-a0464fa8be89"
-            },
-            "target": {
-              "cell": "92633801-a854-4d6c-a99a-53dabf7783e8",
-              "port": "b9b4c288-5954-41d0-945e-a0464fa8be89"
-            },
-            "vertices": [
-              {
-                "x": 830,
-                "y": 130
-              }
-            ]
-          },
-          {
             "shape": "trust-boundary-curve",
             "width": 200,
             "height": 100,
@@ -2565,18 +2514,23 @@
               "threats": [
                 {
                   "id": "8f16ddd4-5c61-45b3-89a9-49cc54f620a9",
-                  "title": "New STRIDE threat",
+                  "title": "Inyección de código",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Tampering",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Un atacante podría enviar una entrada inyectando código malicioso para intentar obtener privilegios.",
+                  "mitigation": "1. Se aplican verificaciones de tipo, formato, longitud y rango de datos. \n2. Todos los datos enviados desde el cliente se validan. \n3. Ninguna decisión de seguridad se basa en parámetros (por ejemplo, parámetros de URL) que se pueden manipular.\n4. Filtrado de entrada mediante validación de lista de permitidos.\n5. Se utiliza codificación de salida ",
                   "modelType": "STRIDE",
-                  "new": true,
+                  "new": false,
                   "number": 19,
-                  "score": ""
+                  "score": "15"
                 }
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "UsuarioAutenticado()"
@@ -2594,6 +2548,57 @@
               {
                 "x": 830,
                 "y": 300
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "UsuarioAutenticado\nResultado",
+              "description": "Este flujo de datos representa una acción dentro del controlador. ",
+              "outOfScope": true,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "UsuarioAutenticado\nResultado"
+            ],
+            "id": "e6a8b2f3-6d54-4025-b1e8-e21ca624db5b",
+            "source": {
+              "cell": "2f2a7fb6-b6d1-4802-9164-88c23a25a7ed",
+              "port": "b9b4c288-5954-41d0-945e-a0464fa8be89"
+            },
+            "target": {
+              "cell": "92633801-a854-4d6c-a99a-53dabf7783e8",
+              "port": "b9b4c288-5954-41d0-945e-a0464fa8be89"
+            },
+            "vertices": [
+              {
+                "x": 830,
+                "y": 130
               }
             ],
             "tools": {
