@@ -1615,8 +1615,8 @@
                 "text": "Usuarios"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -1709,13 +1709,34 @@
             "data": {
               "type": "tm.Actor",
               "name": "Usuarios",
-              "description": "",
+              "description": "(1) Usuario web anónimo. \n(2) Usuario con credenciales de inicio de sesión válidas. \n(3) Usuario con credenciales de inicio de sesión no válidas. ",
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "413844cb-e615-4b50-a00f-14ca193368eb",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 15,
+                  "score": ""
+                }
+              ]
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -2189,57 +2210,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Web Request",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Web Request"
-            ],
-            "id": "8efb34d5-0447-467e-be41-b6b8ae274680",
-            "source": {
-              "cell": "7f48023c-9857-4a03-99ff-650446627c94",
-              "port": "32032435-50bc-4812-a0ee-0e59157fca95"
-            },
-            "target": {
-              "cell": "92633801-a854-4d6c-a99a-53dabf7783e8",
-              "port": "7e6fed2e-2434-4e32-bc90-a4230324b8bd"
-            },
-            "vertices": [
-              {
-                "x": 400,
-                "y": 300
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "UsuarioAutenticado()",
               "description": "",
               "outOfScope": false,
@@ -2501,12 +2471,63 @@
                 "y": 380
               }
             ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Web Request",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Web Request"
+            ],
+            "id": "8efb34d5-0447-467e-be41-b6b8ae274680",
+            "source": {
+              "cell": "7f48023c-9857-4a03-99ff-650446627c94",
+              "port": "32032435-50bc-4812-a0ee-0e59157fca95"
+            },
+            "target": {
+              "cell": "92633801-a854-4d6c-a99a-53dabf7783e8",
+              "port": "7e6fed2e-2434-4e32-bc90-a4230324b8bd"
+            },
+            "vertices": [
+              {
+                "x": 400,
+                "y": 300
+              }
+            ]
           }
         ]
       }
     ],
     "diagramTop": 2,
     "reviewer": "Guillermo Vera",
-    "threatTop": 14
+    "threatTop": 15
   }
 }
